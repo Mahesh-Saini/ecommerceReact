@@ -1,0 +1,106 @@
+.header {
+  height: 60px;
+}
+.header_navbar {
+  color: whitesmoke;
+  background-color: rgb(37, 37, 37);
+  height: 100%;
+  padding: 0px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.header_navbarLeft {
+  flex: 1;
+  /* background-color: rebeccapurple; */
+  display: flex;
+  align-items: center;
+}
+.header_navbarLeft .logoBox {
+  /* background-color: green; */
+  height: 40px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.header_navbarLeft .logoName {
+  font-size: 20px;
+  color: rgb(255, 217, 0);
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header_navbarCenter {
+  flex: 1;
+}
+.header_navbarCenter .searchBox {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.header_navbarCenter .searchBox input {
+  height: 100%;
+  width: 100%;
+  padding: 0px 12px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+}
+.header_navbarCenter .searchBox button {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: gray;
+  font-size: 20px;
+  border: none;
+  transition: all 0.4s ease;
+}
+.header_navbarCenter .searchBox button:hover {
+  background-color: #ffca7a;
+  color: white;
+  cursor: pointer;
+}
+.header_navbarRight {
+  flex: 1;
+  height: 40px;
+  /* background-color: aquamarine; */
+}
+.header_navbarRight_options {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+.header_navbarRight_optionsItem {
+  /* background-color: rebeccapurple; */
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+.header_navbarRight_optionsItem .cartCount {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: crimson;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  padding: 4px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
