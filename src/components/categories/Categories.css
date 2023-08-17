@@ -1,5 +1,6 @@
 .categorySection {
-  width: 540px;
+  /* width: 540px; */
+  max-width: 540px;
   display: flex;
   /* background-color: aquamarine; */
 }
