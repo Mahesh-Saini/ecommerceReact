@@ -1,0 +1,112 @@
+.categorySection {
+  width: 540px;
+  display: flex;
+  /* background-color: aquamarine; */
+}
+.categorySection .category {
+  flex: 1;
+  height: 100%;
+  border-right: 0.1px solid lightgray;
+  border-bottom: 0.1px solid lightgray;
+}
+.categorySection .category .categoryItem {
+  height: 100%;
+  list-style: none;
+  /* background-color: red; */
+  padding: 8px 0px;
+  position: relative;
+}
+.categorySection .category .categoryItem .categoryItems {
+  /* background-color: rebeccapurple; */
+  padding: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #383838;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+.categorySection .category .categoryItem .categoryItems:hover {
+  /* background-color: #ffca7a; */
+  border-top: 1px solid #ffca7a;
+  border-bottom: 1px solid #ffca7a;
+  color: #252525;
+  cursor: pointer;
+}
+.itemActive {
+  background-color: #ffca7a;
+  color: #252525;
+}
+
+.categorySection .category .categoryItem button {
+  padding: 4px 12px;
+  transition: all 0.3s ease;
+  color: gray;
+  border: none;
+  position: absolute;
+  bottom: 5px;
+}
+.categorySection .category .categoryItem .prevButton {
+  left: 5px;
+}
+
+.categorySection .category .categoryItem .nextButton {
+  right: 5px;
+}
+.categorySection .category .categoryItem button:hover {
+  background-color: #ffca7a;
+  color: #252525;
+  cursor: pointer;
+}
+.categorySection .subcategory {
+  flex: 2;
+  padding: 8px;
+  /* background-color: rebeccapurple; */
+  border-right: 0.1px solid lightgray;
+  border-bottom: 0.1px solid lightgray;
+  /* overflow-y: scroll; */
+}
+.categorySection .subcategory .subcategoryItemContainer {
+  /* background-color: rebeccapurple; */
+  margin-bottom: 24px;
+}
+.categorySection .subcategory .subcategoryItemContainer .subcategoryTitle {
+  /* background-color: red; */
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: gray;
+  border-bottom: 0.1px solid lightgray;
+  display: block;
+}
+
+.categorySection .subcategory .subcategoryItemContainer .subcategoryItem {
+  /* margin-top: 8px; */
+  /* background-color: yellow; */
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+.categorySection
+  .subcategory
+  .subcategoryItemContainer
+  .subcategoryItem
+  .subcategoryItems {
+  /* background-color: green; */
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  color: gray;
+  border: 1px solid lightgray;
+}
+.categorySection
+  .subcategory
+  .subcategoryItemContainer
+  .subcategoryItem
+  .subcategoryItems:hover {
+  background-color: #ffca7a;
+  color: #252525;
+  cursor: pointer;
+}
