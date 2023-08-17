@@ -63,7 +63,7 @@
   /* background-color: rebeccapurple; */
   border-right: 0.1px solid lightgray;
   border-bottom: 0.1px solid lightgray;
-  /* overflow-y: scroll; */
+  overflow-y: scroll;
 }
 .categorySection .subcategory .subcategoryItemContainer {
   /* background-color: rebeccapurple; */
