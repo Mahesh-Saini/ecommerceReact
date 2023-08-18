@@ -1,3 +1,4 @@
+import Footer from "../../components/footer/Footer";
 import Hero from "../../components/hero/Hero";
 import Navbar from "../../components/navbar/Navbar";
 import ProductSlide from "../../components/productSlide/ProductSlide";
@@ -91,6 +92,7 @@ const Home = () => {
       <Hero />
       <ProductSlide productTitle="Top seller of the month" data={data} />
       <ProductSlide productTitle="Value for money product" data={data} />
+      <Footer />
     </>
   );
 };
