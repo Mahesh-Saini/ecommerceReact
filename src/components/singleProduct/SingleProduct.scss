@@ -1,0 +1,98 @@
+.productContainer {
+  padding: 8px;
+  min-width: 280px;
+  width: 280px;
+  max-width: 280px;
+  height: 360px;
+  background-color: whitesmoke;
+  box-shadow: inset 4px 4px 20px transparent, inset -4px -4px 20px transparent;
+  border-radius: 4px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  &:hover {
+    background-color: white;
+    transform: scale(1.05);
+    outline: 2px solid #ffca7a;
+    box-shadow: inset 4px 4px 40px rgba(255, 202, 122, 0.5);
+  }
+  &:hover .productImage {
+    height: 50%;
+  }
+  &:hover .productDetails {
+    height: 50%;
+    display: block;
+  }
+  .productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+    /* background-color: rebeccapurple; */
+    transition: all 0.8s ease;
+  }
+  .productDetails {
+    display: none;
+    .priceBox {
+      margin-top: 8px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      &:first-child {
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .cuttingPrice {
+        olor: gray;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: line-through;
+      }
+    }
+    .titleBox {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      margin: 8px 0px;
+    }
+    .buttonBox {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+
+      .moreDetails,
+      .addToCart {
+        border: none;
+        background-color: gray;
+        color: whitesmoke;
+        padding: 8px;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        border-radius: 2px;
+        transition: all 0.5s ease;
+      }
+      .moreDetails {
+        &:hover {
+          background-color: #1d1d1d;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      .addToCart {
+        background-color: #ffb039;
+        color: #252525;
+        font-weight: 600;
+        &:hover {
+          background-color: #ff9900;
+          color: #0f0f0f;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

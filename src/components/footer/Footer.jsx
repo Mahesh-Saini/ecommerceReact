@@ -8,15 +8,17 @@ import {
   FiYoutube,
 } from "react-icons/fi";
 import "./Footer.css";
+import Logo from "../logo/Logo";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="left">
-        <div className="logo">
+        {/* <div className="logo">
           <img src="./vite.svg" alt="logo" />
           Wolfers
-        </div>
+        </div> */}
+        <Logo textTitle="Wolfers" textColor="#ffd900" />
         <div className="socialMediaLinks">
           <a href="#">
             <FiGithub />

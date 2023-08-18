@@ -1,9 +1,8 @@
 import Footer from "../../components/footer/Footer";
-import Hero from "../../components/hero/Hero";
 import Navbar from "../../components/navbar/Navbar";
-import ProductSlide from "../../components/productSlide/ProductSlide";
-import Products from "../products/Products";
-import "./Home.css";
+import SingleProduct from "../../components/singleProduct/SingleProduct";
+import "./Products.scss";
+
 const data = [
   {
     id: 1,
@@ -86,17 +85,22 @@ const data = [
     cuttedPrice: 1599,
   },
 ];
-const Home = () => {
+
+const Products = () => {
   return (
     <>
-      <Products />
-      {/* <Navbar />
-      <Hero />
-      <ProductSlide productTitle="Top seller of the month" data={data} />
-      <ProductSlide productTitle="Value for money product" data={data} />
-      <Footer /> */}
+      <Navbar />
+      <div className="productsShowSection">
+        <div className="left">left</div>
+        <div className="right">
+          {data.map((pItem) => {
+            return <SingleProduct pItem={pItem} key={pItem.id} />;
+          })}
+        </div>
+      </div>
+      <Footer />
     </>
   );
 };
 
-export default Home;
+export default Products;

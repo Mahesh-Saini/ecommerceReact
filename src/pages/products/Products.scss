@@ -1,0 +1,21 @@
+.productsShowSection {
+  max-width: 1366px;
+  margin: auto;
+  display: flex;
+
+  .left {
+    flex: 1;
+    // background-color: rebeccapurple;
+    padding: 8px;
+    border-right: 1px solid lightgray;
+  }
+  .right {
+    flex: 4;
+    padding: 32px;
+    // background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+  }
+}

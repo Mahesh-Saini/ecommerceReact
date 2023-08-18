@@ -1,5 +1,6 @@
 import { FiSettings, FiShoppingCart, FiSearch } from "react-icons/fi";
 import "./Navbar.css";
+import Logo from "../logo/Logo";
 
 const Navbar = () => {
   return (
@@ -7,10 +8,11 @@ const Navbar = () => {
       <div className="header">
         <nav className="header_navbar">
           <div className="header_navbarLeft">
-            <div className="logoBox">
+            <Logo textTitle="Wolfers" textColor="#ffd900" />
+            {/* <div className="logoBox">
               <img src="vite.svg" alt="website logo" />
             </div>
-            <span className="logoName">Wolfers</span>
+            <span className="logoName">Wolfers</span> */}
           </div>
           <div className="header_navbarCenter">
             <div className="searchBox">
