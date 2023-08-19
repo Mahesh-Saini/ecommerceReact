@@ -1,0 +1,19 @@
+.categories {
+  height: 100%;
+  width: 700px;
+  display: flex;
+
+  .left {
+    flex: 1;
+    height: 100%;
+  }
+
+  .right {
+    flex: 1.6;
+    padding: 8px;
+    // background-color: rebeccapurple;
+    border-right: 0.1px solid lightgray;
+    border-bottom: 0.1px solid lightgray;
+    overflow-y: scroll;
+  }
+}

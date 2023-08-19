@@ -1,0 +1,37 @@
+.subcategory {
+  width: 100%;
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .title {
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: gray;
+    border-bottom: 0.1px solid lightgray;
+    display: block;
+  }
+  .items {
+    overflow: hidden;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+    .item {
+      padding: 4px 12px;
+      font-size: 14px;
+      font-weight: 400;
+      color: gray;
+      border: 1px solid lightgray;
+
+      &:hover {
+        background-color: #ffca7a;
+        color: #252525;
+        cursor: pointer;
+      }
+    }
+  }
+}

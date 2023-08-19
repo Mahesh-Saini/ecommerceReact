@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import "./Categories.css";
+import "./Categories.scss";
+import Subcategory from "../subcategory/Subcategory";
+import Category from "../category/Category";
 
 const categoriesData = [
   {
@@ -314,53 +316,23 @@ const Categories = () => {
   };
 
   return (
-    <div className="categorySection">
-      <div className="category">
-        <ul className="categoryItem">
-          {categories.map((item) => {
-            return (
-              <li
-                className={`categoryItems ${
-                  activeItem === item.title ? "itemActive" : ""
-                }`}
-                key={item.id}
-                onClick={() => getSubcategoriesData(categories, item.title)}
-              >
-                {item.title}
-              </li>
-            );
-          })}
-
-          {currentPage > 1 && (
-            <button className="prevButton" onClick={handlePrevButton}>
-              Prev
-            </button>
-          )}
-          {currentPage < possiblePages && (
-            <button className="nextButton" onClick={handleNextButton}>
-              Next
-            </button>
-          )}
-        </ul>
+    <div className="categories">
+      <div className="left">
+        <Category
+          categories={categories}
+          activeItem={activeItem}
+          currentPage={currentPage}
+          possiblePages={possiblePages}
+          getSubcategoriesData={getSubcategoriesData}
+          handlePrevButton={handlePrevButton}
+          handleNextButton={handleNextButton}
+        />
       </div>
-      <div className="subcategory">
+      <div className="right">
         {subcategoryData && (
           <>
-            {subcategoryData.map((item) => {
-              return (
-                <div className="subcategoryItemContainer" key={item.id}>
-                  <span className="subcategoryTitle">{item.title}</span>
-                  <ul className="subcategoryItem">
-                    {item.items.map((i, index) => {
-                      return (
-                        <li className="subcategoryItems" key={index}>
-                          {i}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              );
+            {subcategoryData.map((subcategory) => {
+              return <Subcategory key={subcategory.id} data={subcategory} />;
             })}
           </>
         )}

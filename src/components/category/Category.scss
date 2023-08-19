@@ -1,0 +1,58 @@
+.category {
+  width: 100%;
+  height: 100%;
+  border-right: 0.1px solid lightgray;
+  // border-bottom: 0.1px solid lightgray;
+  // background-color: rebeccapurple;
+
+  .categoryItems {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    // background-color: red;
+    padding: 8px 0px;
+    position: relative;
+
+    .categoryItem {
+      padding: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #383838;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      // background-color: royalblue;
+
+      &:hover {
+        border-top: 1px solid #ffca7a;
+        border-bottom: 1px solid #ffca7a;
+        color: #252525;
+        cursor: pointer;
+      }
+    }
+
+    .itemActive {
+      background-color: #ffca7a;
+      color: #252525;
+    }
+    button {
+      padding: 4px 12px;
+      transition: all 0.3s ease;
+      color: gray;
+      border: none;
+      position: absolute;
+      bottom: 5px;
+
+      &:hover {
+        background-color: #ffca7a;
+        color: #252525;
+        cursor: pointer;
+      }
+    }
+    .prevButton {
+      left: 5px;
+    }
+    .nextButton {
+      right: 5px;
+    }
+  }
+}
