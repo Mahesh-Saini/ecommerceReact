@@ -1,0 +1,35 @@
+.navbarOptions {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 16px;
+
+  .optionsItem {
+    li {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .cartCount {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background-color: crimson;
+      color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
