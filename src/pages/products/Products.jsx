@@ -88,18 +88,14 @@ const data = [
 
 const Products = () => {
   return (
-    <>
-      <Navbar />
-      <div className="productsShowSection">
-        <div className="left">left</div>
-        <div className="right">
-          {data.map((pItem) => {
-            return <SingleProduct pItem={pItem} key={pItem.id} />;
-          })}
-        </div>
+    <div className="productsShowSection">
+      <div className="left">left</div>
+      <div className="right">
+        {data.map((pItem) => {
+          return <SingleProduct pItem={pItem} key={pItem.id} />;
+        })}
       </div>
-      <Footer />
-    </>
+    </div>
   );
 };
 

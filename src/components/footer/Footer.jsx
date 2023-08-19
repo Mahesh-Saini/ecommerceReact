@@ -18,7 +18,7 @@ const Footer = () => {
           <img src="./vite.svg" alt="logo" />
           Wolfers
         </div> */}
-        <Logo textTitle="Wolfers" textColor="#ffd900" />
+        <Logo textTitle="Wolfers" textColor="#ffd900" imgUrl="/wolfers.svg" />
         <div className="socialMediaLinks">
           <a href="#">
             <FiGithub />

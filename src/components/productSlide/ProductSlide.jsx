@@ -23,7 +23,7 @@ const ProductSlide = ({ productTitle, data }) => {
 
   return (
     <section className="topProducts">
-      <div className="productContainer">
+      <div className="productContainerTop">
         <div className="topProductsHeader">
           <h2 className="topProductsTitle">{productTitle}</h2>
           <div className="moveButtonsBox">

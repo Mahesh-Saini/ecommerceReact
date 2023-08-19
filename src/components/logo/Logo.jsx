@@ -3,11 +3,12 @@ import "./Logo.scss";
 const Logo = ({
   textSize = 20,
   textColor = "black",
-  textTitle = "Logo",
+  textTitle = "",
   gap = 8,
   width = 40,
   height = 50,
   style,
+  imgUrl,
 }) => {
   const logoStyles = {
     gap: `${gap}px`,
@@ -24,7 +25,8 @@ const Logo = ({
   return (
     <div className="logo" style={logoStyles}>
       <div className="logoImgBox" style={logoImgBoxStyle}>
-        <img src="vite.svg" alt="website logo" />
+        {/* <img src={`/${textTitle}.svg`} alt="website logo" /> */}
+        <img src={imgUrl} alt="website logo" />
       </div>
       <span className="logoName" style={logoNameStyle}>
         {textTitle}

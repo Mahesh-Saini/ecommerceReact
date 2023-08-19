@@ -8,11 +8,11 @@ const Navbar = () => {
       <div className="header">
         <nav className="header_navbar">
           <div className="header_navbarLeft">
-            <Logo textTitle="Wolfers" textColor="#ffd900" />
-            {/* <div className="logoBox">
-              <img src="vite.svg" alt="website logo" />
-            </div>
-            <span className="logoName">Wolfers</span> */}
+            <Logo
+              textTitle="Wolfers"
+              textColor="#ffd900"
+              imgUrl="/wolfers.svg"
+            />
           </div>
           <div className="header_navbarCenter">
             <div className="searchBox">
