@@ -1,12 +1,16 @@
 import Categories from "../../components/categories/Categories";
 import Crousel from "../../components/crousel/crousel";
-import "./Hero.css";
+import "./Hero.scss";
 
 const Hero = () => {
   return (
     <section className="hero">
-      <Categories />
-      <Crousel />
+      <div className="hero_left">
+        <Categories />
+      </div>
+      <div className="hero_right">
+        <Crousel />
+      </div>
     </section>
   );
 };

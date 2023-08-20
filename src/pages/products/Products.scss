@@ -3,19 +3,17 @@
   margin: auto;
   display: flex;
 
-  .left {
-    flex: 1;
-    // background-color: rebeccapurple;
-    padding: 8px;
+  .productsShowSection_left {
+    width: 460px;
     border-right: 1px solid lightgray;
   }
-  .right {
-    flex: 4;
-    padding: 32px;
-    // background-color: red;
+  .productsShowSection_right {
+    flex: 1;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 32px;
+    justify-content: space-evenly;
+    row-gap: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 }

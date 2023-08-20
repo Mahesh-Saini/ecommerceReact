@@ -1,3 +1,4 @@
+import Filters from "../../components/filters/Filters";
 import Footer from "../../components/footer/Footer";
 import Navbar from "../../components/navbar/Navbar";
 import SingleProduct from "../../components/singleProduct/SingleProduct";
@@ -89,8 +90,10 @@ const data = [
 const Products = () => {
   return (
     <div className="productsShowSection">
-      <div className="left">left</div>
-      <div className="right">
+      <div className="productsShowSection_left">
+        <Filters />
+      </div>
+      <div className="productsShowSection_right">
         {data.map((pItem) => {
           return <SingleProduct pItem={pItem} key={pItem.id} />;
         })}

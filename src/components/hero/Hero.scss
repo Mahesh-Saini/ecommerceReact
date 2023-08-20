@@ -1,0 +1,13 @@
+.hero {
+  display: flex;
+  height: 420px;
+
+  .hero_left {
+    height: 100%;
+    width: 460px;
+  }
+  .hero_right {
+    height: 100%;
+    flex: 1;
+  }
+}
