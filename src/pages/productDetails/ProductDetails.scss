@@ -1,0 +1,12 @@
+.productDetails {
+  //   background-color: rebeccapurple;
+  display: flex;
+  .productDetailsLeft {
+    flex: 1;
+    // background-color: aqua;
+  }
+  .productDetailsRight {
+    flex: 1.5;
+    // background-color: aquamarine;
+  }
+}
