@@ -6,7 +6,7 @@ import Products from "./pages/products/Products";
 import ProductDetails from "./pages/productDetails/ProductDetails";
 import Login from "./pages/login/Login";
 import CreateAccount from "./pages/createAccount/CreateAccount";
-import "./App.css";
+import "./App.scss";
 const router = createBrowserRouter([
   {
     path: "/",

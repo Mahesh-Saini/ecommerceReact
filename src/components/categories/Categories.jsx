@@ -2,17 +2,18 @@ import { useEffect, useState } from "react";
 import "./Categories.scss";
 import Subcategory from "../subcategory/Subcategory";
 import Category from "../category/Category";
+import { FiArrowLeft } from "react-icons/fi";
 
 const categoriesData = [
   {
     id: 1,
     title: "Clothes",
-    url: "clothes1",
+    url: "/Clothes",
     subcategories: [
       {
         id: 1,
-        title: "Headwear/Headgear",
-        url: "path",
+        title: "Headwear or Headgear",
+        url: "/Clothes/Headwear",
         items: [
           "Baseball caps",
           "Beanies",
@@ -280,6 +281,7 @@ const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [subcategoryData, setSubcategoryData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [translateX, setTranslateX] = useState(280);
   const [activeItem, setActiveItem] = useState("Clothes");
   const totalItems = categoriesData.length;
   const pageLimit = 10;
@@ -291,10 +293,11 @@ const Categories = () => {
       currentPage * pageLimit
     );
     setCategories(slicedData);
-    getSubcategoriesData(slicedData, slicedData[0].title);
+    // getSubcategoriesData(slicedData, slicedData[0].title);
   }, [currentPage]);
 
   const getSubcategoriesData = (categories, itemTitle) => {
+    setTranslateX(0);
     categories.forEach((category) => {
       if (category.title === itemTitle) {
         setSubcategoryData((prev) => [...category.subcategories]);
@@ -315,6 +318,10 @@ const Categories = () => {
     }
   };
 
+  const handleBackButton = () => {
+    setTranslateX(280);
+  };
+
   return (
     <div className="categories">
       <div className="left">
@@ -328,11 +335,26 @@ const Categories = () => {
           handleNextButton={handleNextButton}
         />
       </div>
-      <div className="right">
+      <div
+        className="right"
+        style={{ transform: `translateX(-${translateX}px)` }}
+      >
         {subcategoryData && (
           <>
+            <div className="goBackButtonBox">
+              <div className="goBackButton" onClick={handleBackButton}>
+                <FiArrowLeft />
+                <span>Go back</span>
+              </div>
+            </div>
             {subcategoryData.map((subcategory) => {
-              return <Subcategory key={subcategory.id} data={subcategory} />;
+              return (
+                <Subcategory
+                  key={subcategory.id}
+                  data={subcategory}
+                  activeItem={activeItem}
+                />
+              );
             })}
           </>
         )}

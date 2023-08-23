@@ -17,6 +17,10 @@
       /* background-color: rebeccapurple; */
       display: flex;
       align-items: center;
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
     }
     .center {
       flex: 1;

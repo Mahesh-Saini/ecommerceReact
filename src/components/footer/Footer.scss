@@ -1,0 +1,108 @@
+.footer {
+  width: 100%;
+  /* height: 600px; */
+  background-color: rgb(32, 32, 32);
+  color: white;
+  padding: 16px 24px;
+  padding-bottom: 38px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  .footerLeft {
+    flex: 1;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .socialMediaLinks {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      a {
+        background-color: #ffca7a;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(90, 90, 90);
+        font-size: 24px;
+        transition: all 0.5s ease;
+        &:hover,
+        &:active {
+          color: black;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  .footerMiddle {
+    flex: 1;
+    display: flex;
+    .middleLeft,
+    .middleRight {
+      flex: 1;
+      p {
+        font-size: 14px;
+        color: lightgray;
+      }
+      .middleLinks {
+        list-style: none;
+        /* margin-top: 8px; */
+        padding: 8px;
+        .middleLink {
+          padding: 4px 0px;
+          color: gray;
+          a {
+            color: inherit;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  .footerRight {
+    flex: 1;
+    .links {
+      list-style: none;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 8px;
+      .link {
+        padding: 4px 8px;
+        font-size: 14px;
+        /* background-color: rebeccapurple; */
+        transition: all 0.3s ease;
+        letter-spacing: 1.2px;
+        font-weight: 300;
+        border-bottom: 1px solid transparent;
+        &:hover {
+          border-bottom: 1px solid whitesmoke;
+          cursor: pointer;
+        }
+      }
+    }
+    .address {
+      padding: 8px;
+      width: 80%;
+      margin: 50px 0px;
+      span,
+      address {
+        color: gray;
+      }
+    }
+  }
+  .copyright {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 8px 0px;
+    background-color: rgb(43, 43, 43);
+    /* z-index: 1; */
+  }
+}

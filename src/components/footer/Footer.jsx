@@ -7,43 +7,42 @@ import {
   FiTwitter,
   FiYoutube,
 } from "react-icons/fi";
-import "./Footer.css";
+import "./Footer.scss";
 import Logo from "../logo/Logo";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="left">
-        {/* <div className="logo">
-          <img src="./vite.svg" alt="logo" />
-          Wolfers
-        </div> */}
-        <Logo textTitle="Wolfers" textColor="#ffd900" imgUrl="/wolfers.svg" />
+      <div className="footerLeft">
+        <Link to={"/"}>
+          <Logo textTitle="Wolfers" textColor="#ffd900" imgUrl="/wolfers.svg" />
+        </Link>
         <div className="socialMediaLinks">
-          <a href="#">
+          <a href="#" target="_blank">
             <FiGithub />
           </a>
-          <a href="#">
+          <a href="https://www.youtube.com/" target="_blank">
             <FiYoutube />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <FiTwitch />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <FiTwitter />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <FiLinkedin />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <FiInstagram />
           </a>
-          <a href="#">
+          <a href="#" target="_blank">
             <FiFacebook />
           </a>
         </div>
       </div>
-      <div className="middle">
+      <div className="footerMiddle">
         <div className="middleLeft">
           <p>Links:-</p>
           <ul className="middleLinks">
@@ -91,7 +90,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="right">
+      <div className="footerRight">
         <ul className="links">
           <li className="link">Home</li>
           <li className="link">Produts</li>

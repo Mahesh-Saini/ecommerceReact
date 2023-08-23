@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import "./ProductSlide.css";
+import "./ProductSlide.scss";
+import SingleProduct from "../singleProduct/SingleProduct";
 
 const ProductSlide = ({ productTitle, data }) => {
   const [productSlideIndex, setproductSlideIndex] = useState(0);
@@ -8,7 +9,7 @@ const ProductSlide = ({ productTitle, data }) => {
   const totalProduct = data.length;
 
   useEffect(() => {
-    setViewProductInOneScreen(Math.floor(window.innerWidth / 296));
+    setViewProductInOneScreen(Math.floor(window.innerWidth / 216));
   }, [productSlideIndex]);
   const handleLeftMove = () => {
     if (productSlideIndex > 0) {
@@ -23,7 +24,7 @@ const ProductSlide = ({ productTitle, data }) => {
 
   return (
     <section className="topProducts">
-      <div className="productContainerTop">
+      <div className="topProductsContainer">
         <div className="topProductsHeader">
           <h2 className="topProductsTitle">{productTitle}</h2>
           <div className="moveButtonsBox">
@@ -42,30 +43,10 @@ const ProductSlide = ({ productTitle, data }) => {
         <div className="productWrapper">
           <div
             className="productSlide"
-            style={{ transform: `translateX(${-296 * productSlideIndex}px)` }}
+            style={{ transform: `translateX(${-216 * productSlideIndex}px)` }}
           >
             {data.map((pItem) => {
-              return (
-                <div className="product" key={pItem.id}>
-                  <img className="productImage" src={pItem.imgUrl} />
-                  <div className="productDetails">
-                    <div className="priceBox">
-                      <span>{pItem.sellingPrice}/-</span>
-                      <span className="cuttingPrice">
-                        {pItem.cuttedPrice}/-
-                      </span>
-                    </div>
-
-                    <div className="titleBox">
-                      <p>{pItem.title}</p>
-                    </div>
-                    <div className="buttonBox">
-                      <button className="moreDetails">More Details...</button>
-                      <button className="addToCart">Add to cart</button>
-                    </div>
-                  </div>
-                </div>
-              );
+              return <SingleProduct pItem={pItem} key={pItem._id} />;
             })}
           </div>
         </div>
