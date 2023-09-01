@@ -7,6 +7,7 @@ import ProductSlide from "../../components/productSlide/ProductSlide";
 import "./Home.scss";
 import { fetchTopSellingProducts } from "../../redux/product/topSellingProductSlice.js";
 import { fetchRecommendedProducts } from "../../redux/product/recomemdedProductSlice.js";
+import Loading from "../../components/loading/Loading";
 
 const Home = () => {
   const topSellingProducts = useSelector(
@@ -28,6 +29,7 @@ const Home = () => {
         <title>Wolfers - ecommerce application</title>
       </Helmet>
       <Hero />
+
       {topSellingProducts && (
         <ProductSlide
           productTitle="Top seller of the month"

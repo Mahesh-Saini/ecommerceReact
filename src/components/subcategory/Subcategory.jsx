@@ -8,7 +8,11 @@ const Subcategory = ({ data, activeItem }) => {
       <ul className="items">
         {data.items.map((i, index) => {
           return (
-            <Link to={`/products?${data.title}`} className="item" key={index}>
+            <Link
+              to={`/products?category=${activeItem}&subcategory=${data.title}&item=${i}`}
+              className="item"
+              key={index}
+            >
               {i}
             </Link>
           );

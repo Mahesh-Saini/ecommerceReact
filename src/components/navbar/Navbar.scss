@@ -28,36 +28,22 @@
     .right {
       flex: 1;
       height: 40px;
-      /* background-color: aquamarine; */
-      .options {
-        height: 100%;
-        list-style: none;
-        display: flex;
-        justify-content: flex-end;
-        gap: 16px;
-        .optionsItem {
-          width: 40px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 24px;
-          position: relative;
-          cursor: pointer;
-          .cartCount {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: crimson;
-            color: white;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            padding: 4px;
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-          }
+      // background-color: aquamarine;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      a {
+        background-color: #ffd900;
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+        border: none;
+        padding: 6px 12px;
+        margin-left: 8px;
+        font-size: 16px;
+        transition: all 0.5s ease;
+        &:hover {
+          background-color: whitesmoke;
         }
       }
     }

@@ -1,8 +1,9 @@
 .filters {
   width: 100%;
-  height: 420px;
+  padding-bottom: 16px;
+
   .categoriesFilter {
-    height: 100%;
+    height: 420px;
     // background-color: rebeccapurple;
   }
   .priceFilter {
@@ -13,8 +14,13 @@
       //   background-color: red;
       margin-top: 16px;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
+      .min,
+      .max {
+        width: 100%;
+      }
       input {
         // padding: 8px;
         width: 100%;

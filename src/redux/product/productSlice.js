@@ -2,8 +2,32 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchAllProducts = createAsyncThunk(
   "product/fetchAllProducts",
-  async () => {
-    const response = await fetch(`http://127.0.0.1:3000/api/v1/product/all`);
+  async (data) => {
+    const [
+      category,
+      subcategory,
+      item,
+      search,
+      min,
+      max,
+      currentPage,
+      pageLimit,
+    ] = data;
+    let url;
+
+    if (category && subcategory && item) {
+      url = `http://127.0.0.1:3000/api/v1/product/all?category=${category}&subcategory=${subcategory}&item=${item}`;
+    } else if (search) {
+      url = `http://127.0.0.1:3000/api/v1/product/all?search=${search}`;
+    } else if (min && max) {
+      url = `http://127.0.0.1:3000/api/v1/product/all?lowestPrice=${min}&highestPrice=${max}`;
+    } else if (currentPage || pageLimit) {
+      url = `http://127.0.0.1:3000/api/v1/product/all?page=${currentPage}&limit=${pageLimit}`;
+    } else {
+      url = `http://127.0.0.1:3000/api/v1/product/all`;
+    }
+
+    const response = await fetch(url);
     return response.json();
   }
 );
@@ -14,6 +38,7 @@ const allProductSlice = createSlice({
     loading: false,
     error: null,
     count: null,
+    totalCount: null,
     allProducts: null,
   },
 
@@ -24,6 +49,7 @@ const allProductSlice = createSlice({
     builder.addCase(fetchAllProducts.fulfilled, (state, action) => {
       state.loading = false;
       state.allProducts = action.payload.products;
+      state.totalCount = action.payload.totalCount;
     });
     builder.addCase(fetchAllProducts.rejected, (state, action) => {
       state.loading = false;

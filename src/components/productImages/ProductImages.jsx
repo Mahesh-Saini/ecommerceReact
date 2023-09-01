@@ -1,25 +1,51 @@
+import { useState } from "react";
 import "./ProductImages.scss";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 const ProductImages = ({ data }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleLeftButton = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+    }
+  };
+  const handleRightButton = () => {
+    if (currentIndex < data.images.length - 1) {
+      setCurrentIndex((prev) => prev + 1);
+    }
+  };
+  const handleImageClick = (id) => {
+    setCurrentIndex(id);
+  };
+
   return (
     <div className="productImages">
       <div className="imgBox">
-        <img src={`${data.images && data.images[0].imgUrl}`} />
-        <button className="buttonLeft">
-          <FiChevronLeft />
-        </button>
+        <img src={`${data.images && data.images[currentIndex].imgUrl}`} />
+        {currentIndex > 0 && (
+          <button className="buttonLeft" onClick={handleLeftButton}>
+            <FiChevronLeft />
+          </button>
+        )}
 
-        <button className="buttonRight">
-          <FiChevronRight />
-        </button>
+        {currentIndex < data.images?.length - 1 && (
+          <button className="buttonRight" onClick={handleRightButton}>
+            <FiChevronRight />
+          </button>
+        )}
       </div>
       <div className="imagesBox">
-        <div className="imgBox">
-          <img
-            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpngimg.com%2Fuploads%2Fphoto_camera%2Fphoto_camera_PNG7846.png&f=1&nofb=1&ipt=fd27ff8211732a1d9d21a72ab953f508411e81284c47d22fc9271b406fa71fec&ipo=images"
-            alt="camera"
-          />
-        </div>
+        {data.images &&
+          data.images.map((item, i) => {
+            return (
+              <div
+                className={`imgBox ${i === currentIndex && "active"} `}
+                key={item._id}
+                onClick={() => handleImageClick(i)}
+              >
+                <img src={item.imgUrl} />
+              </div>
+            );
+          })}
       </div>
     </div>
   );

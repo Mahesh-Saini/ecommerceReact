@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const SearchBox = () => {
   const [search, setSearch] = useState("");
+
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
@@ -12,7 +13,7 @@ const SearchBox = () => {
   return (
     <div className="searchBox">
       <input type="search" placeholder="search" onChange={handleChange} />
-      <Link to={`/products?${search}`}>
+      <Link to={`/products?search=${search}`}>
         <FiSearch />
       </Link>
     </div>

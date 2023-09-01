@@ -1,7 +1,7 @@
 import "./Filters.scss";
 import Categories from "../categories/Categories";
 
-const Filters = () => {
+const Filters = ({ handleMin, handleMax }) => {
   return (
     <div className="filters">
       <div className="categoriesFilter">
@@ -10,7 +10,26 @@ const Filters = () => {
       <div className="priceFilter">
         <h3>Filter price</h3>
         <div className="priceRangeBox">
-          <input type="range" min={0} max={10000} />
+          <div className="min">
+            <label htmlFor="min">min</label>
+            <input
+              name="min"
+              type="range"
+              min={0}
+              max={10000}
+              onChange={handleMin}
+            />
+          </div>
+          <div className="max">
+            <label htmlFor="max">max</label>
+            <input
+              name="max"
+              type="range"
+              min={0}
+              max={10000}
+              onChange={handleMax}
+            />
+          </div>
         </div>
       </div>
       <div className="sort">

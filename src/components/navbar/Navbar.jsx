@@ -3,8 +3,17 @@ import "./Navbar.scss";
 import SearchBox from "../searchBox/SearchBox";
 import NavbarOptions from "../navbarOptions/NavbarOptions";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [toggleCart, setToggleCart] = useState(false);
+  const [toggleSettings, setToggleSettings] = useState(false);
+  const handleToggleCart = () => {
+    setToggleCart((prev) => !prev);
+  };
+  const handleToggleSettings = () => {
+    setToggleSettings((prev) => !prev);
+  };
   return (
     <div className="navbar">
       <nav className="wrapper">
@@ -21,7 +30,14 @@ const Navbar = () => {
           <SearchBox />
         </div>
         <div className="right">
-          <NavbarOptions />
+          <NavbarOptions
+            toggleCart={toggleCart}
+            handleToggleCart={handleToggleCart}
+            toggleSettings={toggleSettings}
+            handleToggleSettings={handleToggleSettings}
+          />
+          <Link to={"/login"}>sign in</Link>
+          <Link to="/register">register</Link>
         </div>
       </nav>
     </div>

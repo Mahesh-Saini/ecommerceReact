@@ -4,4 +4,13 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  .ratings {
+    display: flex;
+    gap: 8px;
+  }
+  .reviewsList {
+    // background-color: rebeccapurple;
+    padding: 10px;
+  }
 }
